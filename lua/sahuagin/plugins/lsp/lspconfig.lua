@@ -137,7 +137,6 @@ return {
 			},
 		})
     --]===]
-    --
 
 		rusttools.setup({
 			server = {

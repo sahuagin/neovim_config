@@ -12,8 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {import = "tcovert.plugins"},
-  {import = "tcovert.plugins.lsp"},
+  {import = "sahuagin.plugins"},
+  {import = "sahuagin.plugins.lsp"},
 }, {
   install = {
     colorscheme = {"nightfly"},
