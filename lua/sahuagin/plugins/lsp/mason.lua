@@ -38,7 +38,7 @@ return {
 			ensure_installed = {
 			},
 			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true,
+			automatic_installation = false,
 		})
 	end,
 }
