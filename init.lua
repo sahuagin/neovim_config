@@ -1,2 +1,2 @@
-require("tcovert.core")
-require("tcovert.lazy")
+require("sahuagin.core")
+require("sahuagin.lazy")
