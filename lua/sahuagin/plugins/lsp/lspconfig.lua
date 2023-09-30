@@ -174,7 +174,8 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-      serverPath = "~/.cargo/bin/rust-analyzer",
+      -- serverPath = "$HOME/.cargo/bin/rust-analyzer",
+      serverPath = "$HOME/.cargo/bin/",
 			-- filetypes = { "rust" },
 			cmd = {
 				"rustup",
@@ -186,6 +187,8 @@ return {
     --]===]
 
 		rusttools.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 			server = {
 				on_attach = function(_, bufnr)
           opts.buffer = bufnr
@@ -235,6 +238,13 @@ return {
           keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
 				end,
+        serverPath="$HOME/.cargo/bin/",
+        cmd = {
+          "rustup",
+          "run",
+          "nightly",
+          "rust-analyzer",
+        },
 			},
 		})
 	end,
