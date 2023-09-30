@@ -101,6 +101,7 @@ return {
 			on_attach = on_attach,
 		})
 
+
    --[==[
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
@@ -127,7 +128,8 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-      serverPath = "~/.cargo/bin/rust-analyzer",
+      -- serverPath = "$HOME/.cargo/bin/rust-analyzer",
+      serverPath = "$HOME/.cargo/bin/",
 			-- filetypes = { "rust" },
 			cmd = {
 				"rustup",
@@ -139,6 +141,8 @@ return {
     --]===]
 
 		rusttools.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 			server = {
 				on_attach = function(_, bufnr)
 					-- Hover actions
@@ -147,6 +151,13 @@ return {
 					vim.keymap.set("n", "<Leader>a", rusttools.code_action_group.code_action_group, { buffer = bufnr })
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 				end,
+        serverPath="$HOME/.cargo/bin/",
+        cmd = {
+          "rustup",
+          "run",
+          "nightly",
+          "rust-analyzer",
+        },
 			},
 		})
 	end,
