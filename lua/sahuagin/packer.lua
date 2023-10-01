@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 
   use {
   'VonHeikemen/lsp-zero.nvim',
+  disable = true,
   branch = 'v3.x',
   requires = {
     --- Uncomment these if you want to manage LSP servers from neovim
@@ -62,14 +63,18 @@ return require('packer').startup(function(use)
 
   use{
 	"autozimu/LanguageClient-neovim",
+    disable = true,
 	branch = "next",
 	-- build = "bash install.sh",
 	build = "gmake release",
+}
 
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
+  use("simrat39/rust-tools.nvim")
+  use('neovim/nvim-lspconfig')
 
 
 

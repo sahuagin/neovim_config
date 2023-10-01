@@ -21,3 +21,5 @@ languageclient.setup({
     },
 })
 --]]
+--
+-- vim.cmd('source my_vim_script.vim')
