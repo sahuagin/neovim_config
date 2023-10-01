@@ -22,4 +22,20 @@ return require('packer').startup(function(use)
 
   })
 
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+  -- treesitter playground neovim is deprecated as it's now included in NeoVim
+  -- use:
+  -- :Inspect to show the highlight groups under the cursor
+  -- :InspectTree to show the parsed syntax tree ("TSPlayground")
+  -- :EditQuery to open the Live Query Editor (Nvim 0.10+)
+  use('ThePrimeagen/harpoon')
+
+  -- shows tree of history of changes. Changes persist over restarts:
+  use('mbbill/undotree')
+
+  use('tpope/vim-fugitive')
+
+
+
 end)
