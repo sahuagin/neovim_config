@@ -174,7 +174,9 @@ function M.init()
 	if not M.did_init then
 		M.did_init = true
 		-- delay notifications till vim.notify was replaced or after 500ms
-		require("lazyvim.util").lazy_notify()
+		require("lazyvim.util").lazy_notify().setup({
+			background_color = "#121212", -- change to terminal background color
+		})
 
 		-- load options here, before lazy init while sourcing plugin modules
 		-- this is needed to make sure options will be correctly applied

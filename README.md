@@ -27,7 +27,13 @@ Needed to do a few extra steps.
 1. load the new path
    ```bash
    source ~/.zshrc
-   ```
+
+1. install node
+
+  ```bash nvm install 18.18.0
+   nvm default node
+```
+
 1. install jedi_language_server and other python tools
    ```bash
    pip install pyright mypy black jedi_language_server
