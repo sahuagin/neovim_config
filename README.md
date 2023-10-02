@@ -2,7 +2,8 @@
 
 ## Linux
 
-Basically just works.
+Basically just works. Turn on mason, mason_ls, and null_ls,
+in the lazy config, and it should install most everything for you.
 
 ## FreeBSD
 
@@ -53,4 +54,23 @@ Needed to do a few extra steps.
    git clone https://github.com/nvim-telescope/telescope-fzf-native.nvim.git
    cd telescope-fzf-native.nvim
    cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build
+1. build tree-sitter-cli
+```bash
+  cargo install tree-sitter-cli
    ```
+1. make sure pynvim is installed
+```bash
+  pip install pynvim
+```
+1. install stylua
+```bash
+  cargo install stylua
+```
+
+1. install shfmt
+```bash
+  pkg install shfmt
+```
+1. install lazygit
+```bash
+  pkg install lazygit```
