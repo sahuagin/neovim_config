@@ -5,10 +5,12 @@ return {
 		lazy = false,
 		priority = 1000,
 		style = "night",
-		transparent = true,
+		-- transparent = true,
+    --[[
 		styles = {
 			sidebars = "transparent",
 			floats = "transparent",
 		},
+    --]]
 	},
 }

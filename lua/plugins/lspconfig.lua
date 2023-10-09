@@ -135,6 +135,7 @@ return {
 
 		-- configure python server
 		lspconfig["pyright"].setup({
+      disable = false,
 			capabilities = capabilities,
 			on_attach = on_attach,
       -- autostart = false,
@@ -143,11 +144,12 @@ return {
 
 		-- configure python server
 		lspconfig["jedi_language_server"].setup({
+      disable = true,
 			capabilities = capabilities,
 			on_attach = on_attach,
       -- autostart = false,
       autostart = true,
-      filetypes = { python },
+      filetypes = { "python" },
       root_dir = function(fname)
         return vim.fn.getcwd()
       end,
