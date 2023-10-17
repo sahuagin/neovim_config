@@ -135,6 +135,7 @@ return {
 
 		-- configure python server
 		lspconfig["pyright"].setup({
+      disable = false,
 			capabilities = capabilities,
 			on_attach = on_attach,
       -- autostart = false,
@@ -143,6 +144,7 @@ return {
 
 		-- configure python server
 		lspconfig["jedi_language_server"].setup({
+      disable = true,
 			capabilities = capabilities,
 			on_attach = on_attach,
       -- autostart = false,

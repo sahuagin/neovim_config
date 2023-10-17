@@ -12,13 +12,13 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
     { import = "plugins" },
     -- disable these as they don't work on bsd
-    --{ "williamboman/mason-lspconfig.nvim", enabled = false },
-    --{ "williamboman/mason.nvim", enabled = false },
+    { "williamboman/mason-lspconfig.nvim", enabled = false },
+    { "williamboman/mason.nvim", enabled = false },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

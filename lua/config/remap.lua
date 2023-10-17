@@ -56,11 +56,8 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
--- this will get primagen canceled?
--- something to do with intelliJ to do with
--- ctrl-c and escape being different with vertical
--- visual vs normal asaving?
-vim.keymap.set("i", "<C-c>", "<Esc>")
+-- turn C-c into <Esc>
+-- vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- "never press 'Q', it's the worst place in the universe"
 -- I'm guessing it's the screen lock? thats <Ctrl-Q> and <Ctrl-S> though?
