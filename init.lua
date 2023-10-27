@@ -1,6 +1,7 @@
 vim.g.python3_host_prog = "python"
 -- bootstrap lazy.nvim LazyVim and your plugins
 require("config.lazy")
+require("lazy").setup(plugins, opts)
 -- require("lazy").setup(plugins, opts)
 --[[ -- not installed yet
 local builtin = require("telescope.builtin")

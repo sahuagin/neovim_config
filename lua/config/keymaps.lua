@@ -118,8 +118,8 @@ if vim.lsp.inlay_hint then
 end
 
 -- lazygit
-map("n", "<leader>gg", function() require("lazyvim.util").float_term({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG", function() require("lazyvim.util").float_term({ "lazygit" }, {esc_esc = false, ctrl_hjkl = false}) end, { desc = "Lazygit (cwd)" })
+map("n", "<leader>Gg", function() require("lazyvim.util").terminal.open({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false }) end, { desc = "Lazygit (root dir)" })
+map("n", "<leader>GG", function() require("lazyvim.util").terminal.open({ "lazygit" }, {esc_esc = false, ctrl_hjkl = false}) end, { desc = "Lazygit (cwd)" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -130,12 +130,14 @@ if vim.fn.has("nvim-0.9.0") == 1 then
 end
 
 -- LazyVim Changelog
-map("n", "<leader>L", Util.changelog, {desc = "LazyVim Changelog"})
+-- currently broken. can't find require("lazyvim.util").changelog
+-- map("n", "<leader>L", Util.changelog, {desc = "LazyVim Changelog"})
+-- map("n", "<leader>L", require("lazyvim.util").changelog, {desc = "LazyVim Changelog"})
 
 -- floating terminal
-local lazyterm = function() require("lazyvim.util").float_term(nil, { cwd = Util.get_root() }) end
+local lazyterm = function() require("lazyvim.util").terminal.open(nil, { cwd = Util.get_root() }) end
 map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<leader>fT", function() require("lazyvim.util").float_term() end, { desc = "Terminal (cwd)" })
+map("n", "<leader>fT", function() require("lazyvim.util").terminal.open() end, { desc = "Terminal (cwd)" })
 map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
 map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
 
