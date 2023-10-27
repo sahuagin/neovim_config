@@ -177,25 +177,40 @@ return {
 			},
 		})
 
+
+		-- Lua
+		lspconfig["neodev"].setup({
+		    library = { plugins = { "nvim-dap-ui" }, types = true },
+		})
+		
+
 		lspconfig["rust-tools"].setup({
+			-- Rust
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = { -- custom settings for lua
-				Lua = {
-					-- make the language server recognize "vim" global
-					diagnostics = {
-						globals = { "vim" },
+			    server = {
+				on_attach = function(client, bufnr)
+				    on_attach(client, bufnr)
+				    keymap("n", "<C-space>", require("rust-tools").hover_actions.hover_actions, { buffer = bufnr })
+				end,
+				capabilities = capabilities,
+				settings = {
+				    ["rust-analyzer"] = {
+					checkOnSave = {
+					    command = "clippy",
 					},
-					workspace = {
-						-- make language server aware of runtime files
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
+				    },
 				},
-			},
-		})
+			    },
+			    tools = {
+				hover_actions = {
+				    auto_focus = true,
+				},
+			    },
+			    dap = {
+				adapter = require("plugins.dap.main").codelldb,
+			    },
+			})
 
   end
 }

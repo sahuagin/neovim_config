@@ -1,3 +1,4 @@
+----[[
 local rt = require("rust-tools")
 
 local opts = {
@@ -181,6 +182,7 @@ local opts = {
 	}, -- rust-analyzer options
 }
 
+----]]
 require("rust-tools").setup(opts)
 vim.lsp.start({
 	name = "rust-language-server",
